@@ -1,0 +1,22 @@
+docker run --name postgresql-container -p 5000:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+
+PostgreSQL part:
+CREATE DATABASE camstore;
+
+Create table:
+CREATE TABLE PRODUCTS (
+  id SERIAL NOT NULL Primary key,
+  name VARCHAR(50) NOT NULL,
+  price INTEGER NOT NULL,
+  NOTES VARCHAR(100),
+  creationDate TIMESTAMP NOT NULL);
+
+Creation user:
+postgres=# create user shop_user with password 'psw';
+postgres=# grant all privileges on database camstore to shop_user;
+
+Insert scripts:
+INSERT INTO PRODUCTS (name, price, notes, creationdate) VALUES ('RICE', 50, 'note for rice', '2021-12-03 11:22:21');
+INSERT INTO PRODUCTS (name, price, notes, creationdate) VALUES ('Wine', 112, 'wine is good to cheese', '2021-12-05 21:42:21');
+
+SELECT id, name, price, notes, creationdate FROM PRODUCTS;
