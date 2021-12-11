@@ -6,4 +6,10 @@ import java.util.List;
 
 public interface ProductDao {
     List<Product> findAll();
+
+    void add(Product product);
+
+    void edit(Product product);
+
+    Product findById(int id);
 }

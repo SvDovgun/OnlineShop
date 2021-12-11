@@ -12,7 +12,7 @@ public class ProductRowMapper {
 
         int id = resultSet.getInt("id");
         String name = resultSet.getString("name");
-        int price = resultSet.getInt("price");
+        double price = resultSet.getDouble("price");
         String notes = resultSet.getString("notes");
         Timestamp creationDate = resultSet.getTimestamp("creationdate");
         Product product =Product.builder().

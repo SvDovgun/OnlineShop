@@ -21,7 +21,7 @@ class ProductRowMapperTest {
         ResultSet resultSetMock = mock(ResultSet.class);
         when(resultSetMock.getInt("id")).thenReturn(1);
         when(resultSetMock.getString("name")).thenReturn("RICE");
-        when(resultSetMock.getInt("price")).thenReturn(100);
+        when(resultSetMock.getDouble("price")).thenReturn(100.00);
         when(resultSetMock.getString("notes")).thenReturn("notes for ricess");
         when(resultSetMock.getTimestamp("creationdate")).thenReturn(timestamp);
 
@@ -31,7 +31,7 @@ class ProductRowMapperTest {
         //then
         assertEquals(1, actual.getId());
         assertEquals("RICE", actual.getName());
-        assertEquals(100, actual.getPrice());
+        assertEquals(100.00, actual.getPrice());
         assertEquals("notes for ricess", actual.getNotes());
         assertEquals(timestamp, actual.getCreationDate());
 

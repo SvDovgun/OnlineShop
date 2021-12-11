@@ -2,7 +2,9 @@ package com.luxoft.shop.service;
 
 import com.luxoft.shop.dao.ProductDao;
 import com.luxoft.shop.entity.Product;
-
+import lombok.extern.slf4j.Slf4j;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ProductService {
@@ -18,4 +20,21 @@ public class ProductService {
         return  products;
     }
 
+    public void add(Product product) {
+        Timestamp now = Timestamp.valueOf(LocalDateTime.now());
+        product.setCreationDate(now);
+        productDao.add(product);
+        System.out.println("Product successfully added");
+    }
+
+    public Product findById(int id) {
+        Product product = productDao.findById(id);
+        return product;
+    }
+
+    public void edit(Product product) {
+        Timestamp now = Timestamp.valueOf(LocalDateTime.now());
+        product.setCreationDate(now);
+        productDao.edit(product);
+    }
 }

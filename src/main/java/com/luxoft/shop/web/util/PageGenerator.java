@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
 import java.util.Map;
 
 public class PageGenerator {
@@ -38,4 +39,7 @@ public class PageGenerator {
         return stream.toString();
     }
 
+    public String getPage(String filename) {
+        return  getPage(filename, Collections.emptyMap());
+    }
 }
