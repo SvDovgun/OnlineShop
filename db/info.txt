@@ -23,3 +23,10 @@ INSERT INTO PRODUCTS (name, price, notes, creationdate) VALUES ('RICE', 50.07, '
 INSERT INTO PRODUCTS (name, price, notes, creationdate) VALUES ('Wine', 112.77, 'wine is good to cheese', '2021-12-05 21:42:21');
 
 SELECT id, name, price, notes, creationdate FROM PRODUCTS;
+
+
+create table users (
+id SERIAL NOT NULL Primary key,
+name VARCHAR(40),
+email VARCHAR(40),
+password VARCHAR(100));

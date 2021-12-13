@@ -38,11 +38,8 @@ public class AddProductServlet extends HttpServlet {
             resp.sendRedirect("/products");
         } catch (Exception e) {
             String errorMessage = "Product has not been added! Please, enter correct data in the fields and try again";
-
-           // PageGenerator pageGenerator = PageGenerator.instance();
-           // Map<String, Object> parameters = Map.of("errorMessage", errorMessage);
-           // String page = pageGenerator.getPage("product_add.html", parameters);
-          //  resp.getWriter().write(page);
+            System.out.println(errorMessage);
+            e.printStackTrace();
         }
 
     }

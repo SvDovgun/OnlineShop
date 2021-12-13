@@ -24,7 +24,7 @@ public class ProductService {
         Timestamp now = Timestamp.valueOf(LocalDateTime.now());
         product.setCreationDate(now);
         productDao.add(product);
-        System.out.println("Product successfully added");
+    //    System.out.println("Product successfully added");
     }
 
     public Product findById(int id) {
@@ -36,5 +36,9 @@ public class ProductService {
         Timestamp now = Timestamp.valueOf(LocalDateTime.now());
         product.setCreationDate(now);
         productDao.edit(product);
+    }
+
+    public void delete(int id) {
+        productDao.delete(id);
     }
 }

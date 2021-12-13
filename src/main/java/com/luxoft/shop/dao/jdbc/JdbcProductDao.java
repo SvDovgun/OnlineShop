@@ -19,7 +19,7 @@ public class JdbcProductDao implements ProductDao {
     private static final String ADD_SQL = "INSERT INTO PRODUCTS (name, price, notes, creationdate) VALUES(?, ?, ?, ?);";
     private static final String EDIT_SQL = "UPDATE products SET name=?, price=?, notes=?, creationdate=? WHERE id=?;";
     private static final String FIND_BY_ID_SQL = "Select id, name, price, notes, creationdate FROM PRODUCTS where id = ?;";
-
+    private static final String DELETE_SQL = "DELETE FROM PRODUCTS where id = ?;";
 
     @Override
     public List<Product> findAll() {
@@ -91,6 +91,22 @@ public class JdbcProductDao implements ProductDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public void delete(int id) {
+        try (
+                Connection connection = getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(DELETE_SQL))
+        {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Product is not deleted ", e);
+        }
+
     }
 
     private Connection getConnection() throws SQLException {
