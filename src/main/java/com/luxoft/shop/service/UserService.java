@@ -14,8 +14,14 @@ public class UserService {
         userDao.add(user);
     }
 
-    public void checkUserOnValidation(User user) {
-        userDao.findByEmail(user.getEmail());
+    public boolean isUserExist(String name) {
+        boolean isExist = userDao.isUserExist(name);
+        return isExist;
 
+    }
+
+    public User findUserByName(String name) {
+        User user = userDao.findByName(name);
+        return user;
     }
 }

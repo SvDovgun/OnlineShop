@@ -11,8 +11,8 @@ import lombok.ToString;
 @Getter
 @Builder
 public class User {
-    private int id;
-    private String userName;
+    private String name;
     private String email;
+    private String salt;
     private String password;
 }

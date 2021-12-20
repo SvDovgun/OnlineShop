@@ -6,5 +6,7 @@ public interface UserDao {
 
     void add(User user);
 
-    User findByEmail(String email);
+    User findByName(String user);
+
+    boolean isUserExist(String name);
 }

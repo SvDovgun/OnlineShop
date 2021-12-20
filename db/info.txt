@@ -29,4 +29,5 @@ create table users (
 id SERIAL NOT NULL Primary key,
 name VARCHAR(40),
 email VARCHAR(40),
+salt VARCHAR(11),
 password VARCHAR(100));

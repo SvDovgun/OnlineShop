@@ -42,4 +42,9 @@ public class PageGenerator {
     public String getPage(String filename) {
         return  getPage(filename, Collections.emptyMap());
     }
+
+    public String getPageWithMessage(String fileName, String message){
+        Map<String, Object> parameters = Map.of("errorMessage", message);
+        return getPage(fileName, parameters);
+    }
 }
