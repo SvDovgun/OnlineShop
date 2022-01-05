@@ -21,12 +21,15 @@ public class EditProductServlet extends HttpServlet {
         this.productService = productService;
     }
 
+    public EditProductServlet() {
+    }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PageGenerator pageGenerator = PageGenerator.instance();
         int id = Integer.parseInt(req.getParameter("id"));
-        System.out.println("Edit product is " + id);
+        //System.out.println("Edit product is " + id);
 
         Product product = productService.findById(id);
 
@@ -39,7 +42,7 @@ public class EditProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
-        System.out.println("Edit product is " + id);
+        //System.out.println("Edit product is " + id);
         Product productToEdit = getProductFromRequest(req);
         productToEdit.setId(Integer.parseInt(req.getParameter("id")));
         productToEdit.setName(req.getParameter("name"));
@@ -51,9 +54,9 @@ public class EditProductServlet extends HttpServlet {
     }
 
     private Product getProductFromRequest(HttpServletRequest req) {
-        System.out.println(req.getParameter("name"));
-        System.out.println(Double.parseDouble(req.getParameter("price")));
-        System.out.println(req.getParameter("notes"));
+        //System.out.println(req.getParameter("name"));
+        //System.out.println(Double.parseDouble(req.getParameter("price")));
+        //System.out.println(req.getParameter("notes"));
 
         return Product.builder()
                 .name(req.getParameter("name"))

@@ -16,7 +16,7 @@ public class ProductService {
 
     public List<Product> findAll() {
         List<Product> products = productDao.findAll();
-        System.out.println("Products size " +  products.size());
+        //System.out.println("Products list's size is " +  products.size());
         return  products;
     }
 

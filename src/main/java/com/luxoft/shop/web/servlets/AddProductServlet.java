@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class AddProductServlet extends HttpServlet {
     private ProductService productService;
@@ -45,9 +44,9 @@ public class AddProductServlet extends HttpServlet {
     }
 
     private Product getProductFromRequest(HttpServletRequest req) {
-        System.out.println(req.getParameter("name"));
-        System.out.println(Double.parseDouble(req.getParameter("price")));
-        System.out.println(req.getParameter("notes"));
+        //System.out.println(req.getParameter("name"));
+        //System.out.println(Double.parseDouble(req.getParameter("price")));
+        //System.out.println(req.getParameter("notes"));
 
         return Product.builder()
                 .name(req.getParameter("name"))

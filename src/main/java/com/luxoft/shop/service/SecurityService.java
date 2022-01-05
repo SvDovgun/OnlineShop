@@ -67,7 +67,6 @@ public class SecurityService {
 
     private String getHashedPassword(String salt, String password)  {
         String hashedPassword = DigestUtils.md5Hex(salt + password);
-        System.out.println("hashedPassword = " + hashedPassword);
         return hashedPassword;
     }
 
@@ -84,7 +83,7 @@ public class SecurityService {
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
 
-        System.out.println(generatedString);
+        //System.out.println(generatedString);
         return generatedString;
     }
 

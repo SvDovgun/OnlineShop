@@ -35,8 +35,8 @@ public class JdbcProductDao implements ProductDao {
             return products;
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new RuntimeException("Error is in Jdbc", e);
         }
-        return null;
     }
 
     @Override
@@ -89,8 +89,9 @@ public class JdbcProductDao implements ProductDao {
             return product;
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new RuntimeException("Product is not found ", e);
         }
-        return null;
+
     }
 
     @Override
@@ -128,11 +129,11 @@ public class JdbcProductDao implements ProductDao {
             notes = resultSet.getString("notes");
             creationDate = resultSet.getDate("creationdate");
 
-            System.out.println("id: " + id);
-            System.out.println("name: " + name);
-            System.out.println("price: " + price);
-            System.out.println("notes: " + notes);
-            System.out.println("creationDate: " + creationDate);
+//            System.out.println("id: " + id);
+//            System.out.println("name: " + name);
+//            System.out.println("price: " + price);
+//            System.out.println("notes: " + notes);
+//            System.out.println("creationDate: " + creationDate);
 
 
         }

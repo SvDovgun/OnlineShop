@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Random;
+
 
 public class RegisterUserServlet extends HttpServlet {
     private UserService userService;
@@ -53,9 +53,9 @@ public class RegisterUserServlet extends HttpServlet {
     }
 
     private User getUserFromRequest(HttpServletRequest req) {
-        System.out.println(req.getParameter("name"));
-        System.out.println(req.getParameter("email"));
-        System.out.println(req.getParameter("password"));
+        //System.out.println(req.getParameter("name"));
+        //System.out.println(req.getParameter("email"));
+        //System.out.println(req.getParameter("password"));
 
         return User.builder()
                 .name(req.getParameter("name"))

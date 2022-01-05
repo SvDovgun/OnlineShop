@@ -59,8 +59,8 @@ public class LoginUserServlet extends HttpServlet {
     }
 
     private User getUserFromRequest(HttpServletRequest req) {
-        System.out.println(req.getParameter("name"));
-        System.out.println(req.getParameter("password"));
+        //System.out.println(req.getParameter("name"));
+        //System.out.println(req.getParameter("password"));
 
         return User.builder()
                 .name(req.getParameter("name"))
