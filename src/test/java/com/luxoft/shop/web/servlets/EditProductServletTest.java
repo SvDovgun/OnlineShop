@@ -12,11 +12,11 @@ class EditProductServletTest {
 
     @Test
     void testExtractProductById(){
-        EditProductServlet editProductServlet = new EditProductServlet();
-
-        HttpServletRequest mockRequest = mock (HttpServletRequest.class);
-
-        when(mockRequest.getPathInfo()).thenReturn("?id=1");
+//        EditProductServlet editProductServlet = new EditProductServlet();
+//
+//        HttpServletRequest mockRequest = mock (HttpServletRequest.class);
+//
+//        when(mockRequest.getPathInfo()).thenReturn("?id=1");
 
 
 
